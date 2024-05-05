@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant browser
+    participant server
+    participant user
+
+    user->>browser: Enters SPA version of notes app
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: 200 OK (HTML document)
+    deactivate server
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: main.css file
+    deactivate server
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: spa.js file
+    deactivate server
